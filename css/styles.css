@@ -6,3 +6,7 @@
 #player1, #player2{
   display: none;
 }
+
+.col-md-6 {
+  min-width: 100px;
+}

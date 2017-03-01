@@ -6,8 +6,8 @@ function Player(name, turnScore, totalScore, turnRollArray) {
   this.turnRollArray = turnRollArray;
 };
 
-var player1 = new Player(player1, player1TurnScore, player1TotalScore, player1RollsArray);
-var player2 = new Player(player2, player2TurnScore, player2TotalScore, player2RollsArray);
+var player1 = new Player(player1Name, player1TurnScore, player1TotalScore, player1RollsArray);
+var player2 = new Player(player2Name, player2TurnScore, player2TotalScore, player2RollsArray);
 var dice
 //generic rolls & scores
 var humanTurnScore = 0;
@@ -27,7 +27,8 @@ var player2RollsArray = [];
 
 //a function to toggle between players
 var switchPlayer = function() {
-
+  $("#player2").toggle();
+  $("#player1").toggle();
 };
 
 
@@ -49,7 +50,9 @@ $(function(){
     reset();
     player1Name = $("#player1Name").val();
     player2Name = $("#player2Name").val();
-
+    $(".player1name").text(player1Name);
+    $(".player2name").text(player2Name);
+    $("#player1").show();
   });
 //Roll Dice button
   $("#roll").click(function(event){
@@ -76,6 +79,7 @@ $(function(){
     } else {
     humanTurnScore = humanTurnScore + dice
     $("#player1TurnScore").text(humanTurnScore);
+
   };
   };
 // function for ending the turn, totaling up turn score with total score and printing to screen
