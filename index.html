@@ -16,28 +16,42 @@ crossorigin="anonymous"></script>
       <h1>Pig Dice</h1>
     </div>
     <div class="container">
-      <button type="button" name="button" id="reset" class="btn btn-info">Play</button>
+      <form id="namesForm">
+        <div class="form-group">
+          <label for="name">Player 1 Name: </label>
+          <input type="text" name="name" value="" id="player1Name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="name">Player 2 Name: </label>
+          <input type="text" name="name" value="" id="player2Name" class="form-control">
+        </div>
+        <button type="submit" name="button" id="reset" class="btn btn-info">Play</button>
+      </form>
+
       <div class="row">
 
         <div class="col-md-6">
-          <h2>Human</h2>
-          <h3>Turn Score</h3>
-          <h4><span id="humanTurnScore"></span></h4>
-          <h3>TotalScore</h3>
-          <h4><span id="humanTotalScore"></span></h4>
-          <ul id="humanRolls">
-
-          </ul>
+          <div id="player1">
+            <h2>Player 1</h2>
+            <h3>Turn Score</h3>
+            <h4><span id="player1TurnScore"></span></h4>
+            <h3>TotalScore</h3>
+            <h4><span id="player1TotalScore"></span></h4>
+            <ul id="player1Rolls">
+            </ul>
+          </div>
         </div>
         <div class="col-md-6">
-          <h2>Computer</h2>
-          <h3>Turn Score</h3>
-          <h4><span id="computerTurnScore"></span></h4>
-          <h3>TotalScore</h3>
-          <h4><span id="computerTotalScore"></span></h4>
-          <ul id="computerRolls">
+          <div id="player2">
+            <h2>player2</h2>
+            <h3>Turn Score</h3>
+            <h4><span id="player2TurnScore"></span></h4>
+            <h3>TotalScore</h3>
+            <h4><span id="player2TotalScore"></span></h4>
+            <ul id="player2Rolls">
 
-          </ul>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="row">

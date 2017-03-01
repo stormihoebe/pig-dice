@@ -3,3 +3,6 @@
   margin: auto;
   margin-top: 20px;
 }
+#player1, #player2{
+  display: none;
+}
