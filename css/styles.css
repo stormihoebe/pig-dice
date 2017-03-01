@@ -6,7 +6,9 @@
 #player1, #player2{
   display: none;
 }
-
+.playersrow {
+  min-height: 250px;
+}
 .col-md-6 {
   min-width: 100px;
 }
