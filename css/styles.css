@@ -11,4 +11,14 @@
 }
 .col-md-6 {
   min-width: 100px;
+  text-align: center;
+}
+#playerColumn {
+  text-align: center;
+  width: 200px;
+  display: block;
+  margin: auto;
+}
+ul {
+  list-style-type: none;
 }

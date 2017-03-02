@@ -19,13 +19,7 @@ var rollsArray = [];
 var nameP1;
 var nameP2;
 
-//resets all game values
-var resetAll = function() {
-  playerTurnScore = 0;
-  rollsArray = [];
-  player1TotalScore = 0;
-  player2TotalScore = 0;
-};
+
 //resets turn values
 var reset = function() {
   playerTurnScore = 0;
@@ -54,6 +48,16 @@ $(function(){
       gamePlay(player2);
     };
   });
+//resets all game values
+var resetAll = function() {
+  playerTurnScore = 0;
+  rollsArray = [];
+  player1TotalScore= 0;
+  player2TotalScore= 0;
+  $("playerRolls"). text ("");
+  $("turnScore"). text(playerTurnScore);
+  $("playerTotalScore").text ("0");
+};
 //a function to toggle between players
 var switchPlayer = function() {
   if (playerTurn === "player1") {
@@ -83,8 +87,8 @@ rollsArray.push(dice);
   $("ul#playerRolls").text("");
   rollsArray.forEach(function(roll){
     $("ul#playerRolls").append("<li>" + roll + "</li>");
-    turnScoreFunction();
   });
+  turnScoreFunction();
 };
 //Roll Dice button
   $("#roll").click(function(){
@@ -100,20 +104,39 @@ rollsArray.push(dice);
     playerTurnScore += dice;
     $("#turnScore").text(playerTurnScore);
   };
+  checkIf100();
   };
+
+//click hold end turn
   $("#hold").click(function(event){
     endTurn();
   });
+  var endGame = function () {
+    alert("Game Over! You are the winner! Your Reached 100 points first! Play Again!");
+    location.reload();
+
+  }
+//check score to see if game over at 100 points
+  var checkIf100 = function(){
+    if ((playerTurn === "player1") && ((player1.totalScore + playerTurnScore)>= 100)){
+    endGame();
+
+  } else if ((playerTurn === "player2") && ((player2.totalScore + playerTurnScore)>= 100)){
+    endGame();
+    };
+  };
 
 // function for ending the turn, totaling up turn score with total score and printing to screen
     var endTurn = function() {
       if (playerTurn === "player1"){
         player1.totalScore += playerTurnScore;
-        $("#playerTotalScore").text(player1TotalScore);
+        $("#playerTotalScore").text(player1.totalScore);
       } else {
         player2.totalScore += playerTurnScore;
-        $("#playerTotalScore").text(player2TotalScore);
+        $("#playerTotalScore").text(player2.totalScore);
       };
+      $("#player1Total").text(player1.totalScore);
+      $("#player2Total").text(player2.totalScore);
 
       playerTurnScore = 0;
       $("#turnScore").text(playerTurnScore);
