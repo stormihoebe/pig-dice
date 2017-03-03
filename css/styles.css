@@ -1,4 +1,4 @@
-.btn {
+.btn{
   display: block;
   margin: auto;
   margin-top: 20px;
@@ -21,4 +21,10 @@
 }
 ul {
   list-style-type: none;
+}
+.hideInitial {
+  display: none;
+}
+.jumbotron {
+  text-align: center;
 }

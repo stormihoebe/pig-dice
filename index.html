@@ -27,15 +27,22 @@ crossorigin="anonymous"></script>
         </div>
         <button type="submit" name="button" id="reset" class="btn btn-info">Play</button>
       </form>
+    </div>
+    <div class="container hideInitial">
       <div class="row scoresrow">
         <div class="col-md-6">
-          <h2>Player 1 Total Score</h2>
+          <h2><span id="namePlayer1"></span> Total Score</h2>
           <h3><span id="player1Total"></span></h3>
         </div>
         <div class="col-md-6">
-          <h2>Player 2 Total Score</h2>
+          <h2><span id="namePlayer2"></span> Total Score</h2>
           <h3><span id="player2Total"></span></h3>
         </div>
+
+      </div>
+      <div class="row">
+        <button type="button" name="button" id="roll" class="btn btn-success">Roll</button>
+        <button type="button" name="button" id="hold" class="btn btn-warning">Hold</button>
 
       </div>
       <div class="row playersrow">
@@ -50,11 +57,7 @@ crossorigin="anonymous"></script>
           </ul>
         </div>
       </div>
-      <div class="row">
-        <button type="button" name="button" id="roll" class="btn btn-success">Roll</button>
-        <button type="button" name="button" id="hold" class="btn btn-warning">Hold</button>
 
-      </div>
 
     </div>
 

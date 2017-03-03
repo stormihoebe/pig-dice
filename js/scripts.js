@@ -31,9 +31,12 @@ $(function(){
 //reset game to start playing
   $("#namesForm").submit(function(event){
     event.preventDefault();
+    $(".hideInitial").show();
     resetAll();
     nameP1 = $("#player1Name").val();
     nameP2 = $("#player2Name").val();
+    $("#namePlayer1").text(nameP1);
+    $("#namePlayer2").text(nameP2);
     $("#playerColumn").show();
     playerTurn = "player1"
     console.log(playerTurn);
